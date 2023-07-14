@@ -1,1 +1,16 @@
+====> Projetcs and Solution in Visula Studio :
+
 - In Visual studio, a "Solution" is a collection of projects.
+- We can add multiple projects inside under one Solution.
+
+For eg: BCMS solution has multiple projects under it.
+
+BCMS : 
+ - Business_layer 
+ - Data_access_layer
+ - User_Interface_layer
+
+- Inside a project we can have multiple type of files, not just C# file.
+
+= For solution file : .sln
+= For project file : .csproj
