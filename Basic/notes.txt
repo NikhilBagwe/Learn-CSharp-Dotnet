@@ -1,1 +1,1 @@
-notes.
+- In Visual studio, a "Solution" is a collection of projects.
