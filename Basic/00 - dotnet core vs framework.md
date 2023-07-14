@@ -26,7 +26,7 @@
 - In order to  use this libraries we need a programming language i.e C#.
 - So the thing which we installed into our computer is .NET framework and the code which we write is the C# language.
 
-
+## NOTE : C# is case-sensitive language
 
 
 
