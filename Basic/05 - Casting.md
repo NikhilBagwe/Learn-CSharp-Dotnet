@@ -49,7 +49,11 @@ namespace Basic
 }
 ```
 
+## NOTE : Converting and Casting are different concepts :
 
+- Casting means moving from one data type to another data type.
+- Converting means to move from different data type families like for example from a string to number. Sometimes conversion won't happen due to incorrect data passed.
+- We use Convert class in .NET which have functions ToInt, ToString, etc.
 
 
 
