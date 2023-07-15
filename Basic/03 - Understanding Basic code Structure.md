@@ -37,8 +37,13 @@ namespace Basic
 - A DLL does not execute by itself.
 - DLL can be used inside web, console, desktop applications.
 - To create a DLL : Right click on solution -> Add -> New Project -> Class Library(.NET core) -> SomeCommonlogic (name of class library).
-- A class library dosen't have a UI.
+- A class library dosen't have a UI. It contains pure business logic.
 - Now if you explore SomeCommonlogic class library in explorer, you will only find a DLL of it, no .exe file.
+
+## Class Library :
+
+- It is used to share common logic without the UI across across the projects in a solution.
+- The output of a class library is DLL which at EOD is an Assembly.
 
 ## NOTE : List out all templates installed on computer : dotnet new --list
 
@@ -47,12 +52,17 @@ namespace Basic
 - Now go to ProjectConsole .cs file -> Include "SomeCommonlogic" using "using" keyword.
 - Create object of it and use it.
 
+## Assemblies :
+
+- Assembly means the final unit of deployment.
+- The final deployables that you give to the end user for deployment are termed as Assemblies.
+- A DLL is an assembly, .exe is an assembly, class library is an assembly.
 
 
+## Q. When we build C# code, why do we have 2 folders, "bin" and "obj" ?
 
-
-
-
+- Every file is compiled separately in "obj" folder. Suppose project has 10 c# files, than their compiled version is stored separately in obj folder.
+- Finally all compiled files are gathered together, compiled and the final assembly is stored in the "bin" folder.
 
 
 
