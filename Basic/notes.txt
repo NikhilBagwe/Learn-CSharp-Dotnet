@@ -14,3 +14,18 @@ BCMS :
 
 = For solution file : .sln
 = For project file : .csproj
+
+
+====> .Net is supported by multiple languages :
+
+- Currently we are using C#.
+- But we can also use Visual Basic, F#, etc.
+
+For eg : 
+- The Console.WriteLine() is a library present in .NET framework and we use C# programming language to invoke it.
+
+====>  The common platform in .NET is to compile the code to IL code.
+
+
+
+
