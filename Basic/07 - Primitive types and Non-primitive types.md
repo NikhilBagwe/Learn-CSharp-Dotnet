@@ -54,8 +54,8 @@ namespace Basic
 
             obj1.name = "Om"; // Thus, modifying one object will affect the other object also.
 
-            Console.WriteLine(obj.name);
-            Console.WriteLine(obj1.name);
+            Console.WriteLine(obj.name);  // Om
+            Console.WriteLine(obj1.name); // Om
         }
 
         class MyClass{
