@@ -9,3 +9,4 @@
 - Models are also referred as POCO - Plain Old C# Object.
 - They are just like a normal C# class which represent a Table from DB.
 - Each property represent a column in table.
+- We can also create Models for SQL Joins and include Many to Many relationships.
