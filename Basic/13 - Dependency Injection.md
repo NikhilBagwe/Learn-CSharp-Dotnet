@@ -27,6 +27,14 @@
 
 - When the Injector Injects the Dependency Object (i.e. Service Object) into the Client Class through the Client Class Constructor, then it is called Constructor Dependency Injection.
 
+---
+---
+
+## A more simpler explantion :
+
+1. The literal meaning of DI is to inject dependencies.
+2. A Dependency is just another Object that your class needs to function
+3. DI means that the dependency is pushed into the class from the outside. It means that we shouldn't instantinate the dependencies using "new" operator from inside the class.
 
 
 
