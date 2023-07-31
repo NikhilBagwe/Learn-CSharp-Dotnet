@@ -34,7 +34,30 @@
 
 1. The literal meaning of DI is to inject dependencies.
 2. A Dependency is just another Object that your class needs to function
-3. DI means that the dependency is pushed into the class from the outside. It means that we shouldn't instantinate the dependencies using "new" operator from inside the class.
+3. DI means that the dependency is pushed into the class from the outside. It means that we shouldn't instantinate the dependencies using the "new" operator from inside of the class.
+4. Instead we take it as a Constructor parameter.
+
+## Example : 
+
+- A House building robot is programmed to build walls of the house using raw materials.
+- One of the walls has a door to be built.
+- So will you program the robot to "build a new door from scratch using raw materials" or "use a Ready-made door and simply install it" ?
+- Of course, just simply use a Ready made door.
+- That's what DI does. It decouples your classes construction from the construction of it's dependencies.
+
+## Dependency Inversion principle :
+
+- The principal states that code should depend on Abstractions (Interfaces).
+- Thus, by depending on abstractions we are decoupling our implementations from each other.
+
+## Problem !
+
+- After adopting DI, now each of our classes require some of these dependencies to function.
+- Now for each class we have to figure out which dependency they need also how to instantiate them.
+
+## Solution : Dependency Injection Container
+
+- At root of Dependency Injection Container is nothing more than a map of dependencies your Class needs with the logic to create those dependencies if they are not been created. 
 
 
 
