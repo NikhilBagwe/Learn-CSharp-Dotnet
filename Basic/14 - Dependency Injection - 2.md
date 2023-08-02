@@ -39,6 +39,56 @@
 - DI is a software pattern.
 - DI is basically providing the objects that an object needs instead of having it construct the objects themselves.
 
+---
+
+## Constructor Injection :
+
+- CI is the process of injecting the dependent class object through the constructor.
+
+### Example of Tight Coupling code:
+
+```csharp
+class CurrentAccount
+{
+    public void PrintDetails()
+    {
+        Console.WriteLine("Details of Current Account");
+    }
+}
+
+class SavingAccount
+{
+    public void PrintDetails()
+    {
+        Console.WriteLine("Details of Saving Account");
+    }
+}
+
+class Account
+{
+    // We can see that Account class has a dependency on CurrentAccount and SavingAccount classes.
+    // So it results into Tight coupling.
+    CurrentAccount ca = new CurrentAccount();
+    SavingAccount sa = new SavingAccount();
+
+    public void PrintAccounts()
+    {
+        ca.PrintDetails();
+        sa.PrintDetails();
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Account a = new Account();
+        a.PrintAccounts();
+        Console.ReadLine();
+    }
+}
+
+```
 
 
 
