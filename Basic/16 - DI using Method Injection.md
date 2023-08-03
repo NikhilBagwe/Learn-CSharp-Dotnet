@@ -3,7 +3,9 @@
 - In MI we inject the dependent class object through a class method.
 - In given example, Account class has a dependency on SavingAccount and CurrentAccount class.
 - But we are not making there objects directly inside Account class.
-- Instead we are injecting SavingAccount and CurrentAccount class objects them into Account class PrintAccounts method using Interface.
+- Instead we are injecting SavingAccount and CurrentAccount class objects directly into Account class PrintAccounts() method using Interface.
+
+## Example code :
 
 ```csharp
 public interface IAccount
