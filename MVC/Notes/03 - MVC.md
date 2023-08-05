@@ -21,7 +21,7 @@
 
 - User is the one who uses our application.
 - When user hits the url request. the request first goes to controller.
-- Then controller checks if any data is present inside Model (when Model is taking data from DB).
+- Then controller checks if any data is present inside Model (Model takes data from DB).
 - If data is present in Model than the View is updated with the data. It is job of controller to take data from Model and render it onto View.
 - Then User sees the updated View.
 - In case when no data is present in Model i.e it is an Static application, then Controller directly renders the View to User.
