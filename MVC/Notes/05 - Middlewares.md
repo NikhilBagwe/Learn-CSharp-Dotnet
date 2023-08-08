@@ -55,7 +55,7 @@ app.Run();
 
  ### app.Use() :
 
- 
+ - If we want to execute multiple middlewares than don't use "Run()" as it only takes "context" as parameter.
 
 
 
