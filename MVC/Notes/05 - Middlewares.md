@@ -56,7 +56,34 @@ app.Run();
  ### app.Use() :
 
  - If we want to execute multiple middlewares than don't use "Run()" as it only takes "context" as parameter.
+   
+```csharp
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
 
+app.Use(async (context, next) =>
+{
+    await context.Response.WriteAsync("1st Middleware \n");
+    // passing request to next middleware
+    await next();
+});
+
+app.Use(async (context, next) =>
+{
+    await context.Response.WriteAsync("2nd Middleware \n");
+    // passing request to next middleware
+    await next();
+});
+
+app.Run(async (context) =>
+{
+    await context.Response.WriteAsync("Hello world");
+});
+
+// Server starts at this line. Our app is hosted onto server. So writing this is important.
+app.Run();
+
+```
 
 
 
