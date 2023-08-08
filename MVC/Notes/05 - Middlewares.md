@@ -15,3 +15,59 @@
 - It can also contorl how our application look when there is an error. Like which page needs to be displayed, etc.
 - Plays an important role in authenticating a User to perform certain actions.
 - Each piece of middleware in ASP.NET is an object and each piece has a very specific, focused and limited role.
+
+## NOTE :
+
+- Order in which Middleware is written is important.
+- As they will be executed as per that order.
+
+## Example :
+
+### Basic :
+
+```csharp
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+//app.MapGet("/", () => "Hello World!");
+
+// Custom Middleware inside Run() - Whatever request will come to server, it will send below message in response.
+// https://localhost:7226/anything
+// Thus for each and every request, this middleware will be executed.
+app.Run(async (context) =>
+{
+    await context.Response.WriteAsync("Welcome to asp.net");
+});
+
+// Will never be executed.
+app.Run(async (context) =>
+{
+    await context.Response.WriteAsync("Hello world");
+});
+
+// Server starts at this line. Our app is hosted onto server. So writing this is im[portant.
+app.Run();
+
+```
+
+- Run() method dosen't execute middlewares after it (i.e subsequent middlewares). The concept of 'next' is used in such case.
+- If you want to use multiple middlewares in your app than use "app.Use()".
+
+ ### app.Use() :
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
