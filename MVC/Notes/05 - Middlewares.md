@@ -2,7 +2,7 @@
 
 - Middlewares are simple functions/methods having some logic which needs to be executed when client sents a request to Server.
 - Eg: User requests a page which requires Authorization. Middleware is used to handle it.
-- Your request will go through Middleware while going from Client to Server and when Server responds
+- Your request will go through Middleware while going from Client to Server and when Server responds with response, the response will also go back through middlewares to client side.
 - HTTP Request Pipeline - The request sent from Client side goes through HTTP Request Pipeline to Web App server.
 - Middlewares are present in the pipeline.
 - Then the response sent by the server again goes through the pipeline(middleware) and reaches Client side.
@@ -53,7 +53,9 @@ app.Run();
 - Run() method dosen't execute middlewares after it (i.e subsequent middlewares). The concept of 'next' is used in such case.
 - If you want to use multiple middlewares in your app than use "app.Use()".
 
- ### app.Use() :
+---
+
+ ### app.Use() : To use multiple middlewares
 
  - If we want to execute multiple middlewares than don't use "Run()" as it only takes "context" as parameter.
    
@@ -65,14 +67,14 @@ app.Use(async (context, next) =>
 {
     await context.Response.WriteAsync("1st Middleware \n");
     // passing request to next middleware
-    await next();
+    await next(context);
 });
 
 app.Use(async (context, next) =>
 {
     await context.Response.WriteAsync("2nd Middleware \n");
     // passing request to next middleware
-    await next();
+    await next(context);
 });
 
 app.Run(async (context) =>
@@ -82,7 +84,6 @@ app.Run(async (context) =>
 
 // Server starts at this line. Our app is hosted onto server. So writing this is important.
 app.Run();
-
 ```
 
 
