@@ -18,3 +18,42 @@
 
 1. Convention based Routing - Used in Normal web application.
 2. Attribute based Routing - Used where concept of API is used in web app.
+
+---
+
+## Convention Based Routing :
+
+### Ready made routing available in Asp.net core mvc app :
+
+```csharp
+// Program.cs - 
+
+app.UseRouting();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+```
+- The above route gets the Home controller and calls Index() method in it which returns a View().
+
+### Adding Routing from scratch in Asp.net Empty project :
+
+1. Create empty project.
+2. Make Controller folder and add a controller named "Homecontroller" to it.
+3. The Homecontroller must be returning a View() from Index method which is not created yet.
+4. So create Views -> Home -> Index.cshtml file
+5. Now all views added in Homecontroller will be made inside Home folder.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
