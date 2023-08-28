@@ -34,7 +34,12 @@
 - Repository Design Pattern is used to create an abstraction layer between the data access layer and the business logic layer of the application.
 - In our example, we need to separate the data access logic from the Employee Controller. 
 
+---
 
+### Conclusion :
+
+- RP minimizes duplicate query logic.
+- Decouples your applcation from Persistence frameworks i.e EF (A persistence framework is middleware that assists in the storage and retrieval of information between applications and databases). Meaning we can change our ORM anytime.
 
 
 
