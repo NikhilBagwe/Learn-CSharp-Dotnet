@@ -41,6 +41,45 @@
 - RP minimizes duplicate query logic.
 - Decouples your applcation from Persistence frameworks i.e EF (A persistence framework is middleware that assists in the storage and retrieval of information between applications and databases). Meaning we can change our ORM anytime.
 
+---
+---
+
+[YT Video](https://www.youtube.com/watch?v=x6C20zhZHw8)
+
+## What is RP ?
+
+- A collection of classes focused on encapsulating the logic necessary to interact with our data with following benefits:
+  
+1. Centralize common data access functionality.
+2. Better code maintainability.
+3. Decoupling Controllers from Infrastructure layer used to fetch data.
+
+
+### Non-Generic Repository :
+
+- In this case, we need to create a separate repository for each entity of our application.
+- For example, if we have two entities, Employee, and Customer in our application, then we need to create two repositories.
+- Employee Repository will have operations related to Employee Entity and Customer Repository will have operations related to Customer Entity only.
+
+### Generic Repository (One Repository for All Entities) :
+
+- A Generic Repository is one that can be used for all entities.
+- In other words, the Generic Repository can be either used for Employee Entity, Customer Entity, or any other entity. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
