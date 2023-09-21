@@ -14,3 +14,5 @@
 3. Also create the Contracts folder. Cmd: dotnet new classlib -o BuberDinner.Contracts
 4. Infrastructure folder: dotnet new classlib -o BuberDinner.Infrastructure
 5. Application folder : dotnet new classlib -o BuberDinner.Application
+6. Domain folder : dotnet new classlib -o BuberDinner.Domain
+7. Add all projects to sln file: Cmd = dotnet sln add **/*.csproj (Works on Git bash only)
