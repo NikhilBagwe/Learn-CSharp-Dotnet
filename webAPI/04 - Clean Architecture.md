@@ -27,3 +27,23 @@
 
 - View API response directly into VS code.
 - Create a '.http' file inside which mention the request url and click on 'Send Request' present just above it to view response.
+
+## Understanding the project :
+
+- The PRESENTATION LAYER will act as a door to outside world. It will contain the APIs and Contracts.
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
