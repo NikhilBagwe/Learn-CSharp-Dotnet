@@ -17,3 +17,13 @@
 5. Application folder : dotnet new classlib -o BuberDinner.Application
 6. Domain folder : dotnet new classlib -o BuberDinner.Domain
 7. Add all projects to sln file: Cmd = dotnet sln add **/*.csproj (Works on Git bash only)
+8. Reference projects with each other. Cmd : dotnet add .\BuberDinner.Api\ reference .\BuberDinner.Contracts\ .\BuberDinner.Application\
+9. dotnet add .\BuberDinner.Infrastructure\ reference .\BuberDinner.Application\
+10. Application dependency on Domain : Cmd = dotnet add .\BuberDinner.Application\ reference .\BuberDinner.Domain\
+11. dotnet add .\BuberDinner.Api\ reference .\BuberDinner.Infrastructure\
+12. Run a particular Project: cmd = dotnet run --project .\BuberDinner.Api\
+
+### REST Client vscode extension: 
+
+- View API response directly into VS code.
+- Create a '.http' file inside which mention the request url and click on 'Send Request' present just above it to view response.
