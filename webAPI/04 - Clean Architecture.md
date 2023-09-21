@@ -1,8 +1,9 @@
-## Intro :
+## Intro : [Blog Link](https://betterprogramming.pub/the-clean-architecture-beginners-guide-e4b7058c1165)
 
 - Clean Architecture also called as Onion Architecture.
 - The core concept is that we have the Core logic/Domain in center of everything and the Infrastructure, Database and rest part of the application sits on the outside.
 - Thus, we can easily replace the outer logic without changing the core logic.
+- The Dependency Rule states that the source code dependencies can only point inwards.This means nothing in an inner circle can know anything at all about something in an outer circle. i.e. the inner circle shouldn’t depend on anything in the outer circle.
   
   ![img-1](https://github.com/NikhilBagwe/Learn-CSharp-Dotnet/assets/67143015/8e047c01-5c53-41e1-ae26-775e8e3a98fc)
   ![img-2](https://github.com/NikhilBagwe/Learn-CSharp-Dotnet/assets/67143015/65f3c3bd-b8f6-42ef-a0d2-37af347680b0)
