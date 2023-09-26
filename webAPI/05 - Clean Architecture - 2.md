@@ -24,7 +24,19 @@
 ### 1. Domain layer :
 - Has no dependencies.
 - Contain a lot of pure functions.
+- No I/O operations are performed.
+- OOP is followed.
 
+### 2. Application layer :
+- Contain Domain logic.
+- Here we will incorporate CQRS.
+
+### 3. Infrastructure layer :
+- Contain data access layer, logging, monitoring, etc.
+
+### 4. Presentation layer :
+- Contain Web API code.
+- Entry point into our system.
 
 
 
