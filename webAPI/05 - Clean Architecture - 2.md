@@ -62,6 +62,7 @@ namespace CleanMovie.Domain
 
 ## Application layer :
 
+- It dictates how the business logic of the application should be and it only depends on Domain Layer.
 - Defines and implements use cases or application-specific business operations.
 - Acts as an intermediary between the outer layers (such as the user interface and infrastructure) and the domain layer. 
 
