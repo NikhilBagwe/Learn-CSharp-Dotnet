@@ -69,7 +69,11 @@ namespace CleanMovie.Domain
 - Interface don't have any methods nor access modifiers.
 - Service is responsible for defining the use case. Thus we have Interface and a class implementing that interface.
 
+## Infrastructure Layer :
 
+- Here we are going to perform the actual operations like talking to the DB, APIs, etc. basically anything external to our Domain.
+- Infrastructure depends on Application so add a refernece to it.
+- For example, we can implement our Repositories here.
 
 
 
