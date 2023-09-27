@@ -65,7 +65,9 @@ namespace CleanMovie.Domain
 - It dictates how the business logic of the application should be and it only depends on Domain Layer.
 - Defines and implements use cases or application-specific business operations.
 - Acts as an intermediary between the outer layers (such as the user interface and infrastructure) and the domain layer. 
-
+- For example, we can create a Repository in this layer which will concerned with the Data access. We will create an Interface of it here but won't implement it here.
+- Interface don't have any methods nor access modifiers.
+- Service is responsible for defining the use case. Thus we have Interface and a class implementing that interface.
 
 
 
