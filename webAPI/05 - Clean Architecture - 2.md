@@ -38,6 +38,39 @@
 - Contain Web API code.
 - Entry point into our system.
 
+---
+---
+
+## What is domain in CA ?
+
+- It is basically contains the core logic which will be same throughout the whole system we are building.
+- This is where you define your domain entities, value objects, business logic, and domain-specific rules.
+- It is INDEPENDENT.
+- Example : Create a class library "CleanMovie.Domain". Then create a "Movie.cs" class and add below code in it.
+
+```csharp
+namespace CleanMovie.Domain
+{
+    public class Movie
+    {
+        public int Id { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public decimal Cost { get; set; }
+    }
+}
+```
+
+## Application layer :
+
+- Defines and implements use cases or application-specific business operations.
+- Acts as an intermediary between the outer layers (such as the user interface and infrastructure) and the domain layer. 
+
+
+
+
+
+
+
 
 
 
