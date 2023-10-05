@@ -8,4 +8,4 @@
 dotnet ef dbcontext scaffold "server=192.168.11.130\nucdb2014;database=Nikhil;user id=sa;password=nuc1234$" Microsoft.EntityFrameworkCore.SqlServer --context-dir Data --output-dir Data
 ```
 
-4. Above command generates DbContext and Models in "Data" folder.
+4. Above command generates DbContext and Models in "Data" folder. It generates models for all tables present in that DB.
