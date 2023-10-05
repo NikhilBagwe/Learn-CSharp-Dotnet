@@ -9,3 +9,5 @@ dotnet ef dbcontext scaffold "server=192.168.11.130\nucdb2014;database=Nikhil;us
 ```
 
 4. Above command generates DbContext and Models in "Data" folder. It generates models for all tables present in that DB.
+5. Then we have to generate the API controller for the Models (Entity class).
+6. The normal controller code which we can generate in Visual Studio IDE has certain downsides - We should not use our Entity class to fetch the data in our api endpoints. The Entity class must only interact with DB.
