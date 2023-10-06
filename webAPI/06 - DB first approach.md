@@ -55,6 +55,8 @@ namespace BookStoreAPI.Configurations
         public MapperConfig()
         {
             CreateMap<AuthorCreateDto, Author>().ReverseMap();
+            CreateMap<AuthorUpdateDto, Author>().ReverseMap();
+            CreateMap<AuthorReadOnlyDto, Author>().ReverseMap();
         }
     }
 }
@@ -79,6 +81,130 @@ public async Task<ActionResult<AuthorCreateDto>> PostAuthor(AuthorCreateDto auth
 }
 ```
 
+### Final AuthorController code :
+
+```csharp
+using AutoMapper;
+using BookStoreAPI.Data;
+using BookStoreAPI.Models.Author;
+using BookStoreApp.API.Models.Author;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
+namespace BookStoreAPI.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class AuthorsController : ControllerBase
+    {
+        private readonly BookStoreDbContext _context;
+        private readonly IMapper _mapper;
+
+        public AuthorsController(BookStoreDbContext context, IMapper mapper)
+        {
+            _context = context;
+            _mapper = mapper;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<AuthorReadOnlyDto>>> GetAuthors()
+        {
+            // return await _context.Authors.ToListAsync();
+
+            // fetch the record from DB
+            var authors = await _context.Authors.ToListAsync();
+            // Then map it to a DTO to hide the properties which are not to be displayed to User.
+            var authorDtos = _mapper.Map<IEnumerable<AuthorReadOnlyDto>>(authors);
+
+            return Ok(authorDtos);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<AuthorReadOnlyDto>> GetAuthor(int id)
+        {
+            var author = await _context.Authors.FindAsync(id);
+
+            if (author == null)
+            {
+                return NotFound();
+            }
+
+            var authorDto = _mapper.Map<AuthorReadOnlyDto>(author);
+            return Ok(authorDto);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutAuthor(int id, AuthorUpdateDto authorDto)
+        {
+            if (id != authorDto.Id)
+            {
+                return BadRequest();
+            }
+
+            var author = await _context.Authors.FindAsync(id);
+
+            if (author == null)
+            {
+                return NotFound();
+            }
+
+            // Logic to update the record
+            _mapper.Map(authorDto, author);
+            _context.Entry(author).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException ex)
+            {
+                if (!await AuthorExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<AuthorCreateDto>> PostAuthor(AuthorCreateDto authorDto)
+        {
+            var author = _mapper.Map<Author>(authorDto);
+
+            await _context.Authors.AddAsync(author);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetAuthor), new { id = author.Id }, author);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteAuthor(int id)
+        {
+            var author = await _context.Authors.FindAsync(id);
+
+            if (author == null)
+            {
+                return NotFound();
+            }
+
+            _context.Authors.Remove(author);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+        private async Task<bool> AuthorExists(int id)
+        {
+            return await _context.Authors.AnyAsync(e => e.Id == id);
+        }
+    }
+}
+```
 
 
 
